@@ -47,7 +47,7 @@ input[type="text"], textarea {
 <div class="write-container">
 		<h2>게시판 글쓰기</h2>
 
-		<form action="/boards/write" method="post" enctype="multipart/form-data">
+		<form action="/boards/write" method="post">
 			<table class="write-table">
 				<tr>
 					<th>제목</th>
@@ -56,12 +56,8 @@ input[type="text"], textarea {
 				</tr>
 				<tr>
 					<th>작성자</th>
-					<td><input type="text" name="writer" value=${login_id }
+					<td><input type="text" name="writer" value="${loginID}"
 						readonly class="readonly-input"></td>
-				</tr>
-				<tr>
-					<th>파일첨부</th>
-					<td><input type="file" name="files" multiple></td>
 				</tr>
 				<tr>
 					<th>내용</th>
@@ -74,7 +70,7 @@ input[type="text"], textarea {
 				<input type="hidden" value="${cpage }" name="cpage">
 				<button type="submit" class="submit-btn">등록</button>
 				<button type="button" class="cancel-btn"
-					onclick="location.href='/boards/list?cpage=${cpage}'">취소</button>
+					onclick="location.href='/boards/list">취소</button>
 			</div>
 		</form>
 	</div>

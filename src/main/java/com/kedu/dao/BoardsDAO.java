@@ -25,6 +25,7 @@ public class BoardsDAO {
 	public int addlist(BoardsDTO dto) {
 		String sql = "insert into boards " +
                 "VALUES (boards_seq.nextval, ?, ?, ?,?, SYSDATE)";
+		System.out.println(dto.getWriter());
 
 		return jdbc.update(sql,dto.getWriter(),dto.getTitle() , dto.getContents(), 0);
 
