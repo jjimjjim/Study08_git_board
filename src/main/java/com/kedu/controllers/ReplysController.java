@@ -15,10 +15,9 @@ public class ReplysController {
 	private ReplysDAO dao;
 	
 	@RequestMapping("insert")
-	public String insert(ReplysDTO dto)  {
-		
+	public String insert(ReplysDTO dto)  {	
 		dao.insert(dto);
-		
+
 	}
 
 }
