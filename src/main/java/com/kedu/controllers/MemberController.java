@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.kedu.commons.EncryptionUtils;
@@ -26,8 +27,9 @@ public class MemberController {
 		boolean result = dao.login(id,eu.getSha512(pw));
 		System.out.println(pw);
 		if(result) {
-			session.setAttribute("loginId", id);
+			session.setAttribute("loginID", id);
 		}
+		System.out.println(result);
 		return "redirect:/";	
 	}
 	
@@ -55,12 +57,45 @@ public class MemberController {
 		if(dao.addMember(dto1) > 0) {
 			return "redirect:/";
 		};
-		return "redirect:members/error";
+		return "redirect:member/error";
 		
 	}
 	
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
+
+	
+	@RequestMapping("/mypage")
+	public String toMypage(HttpSession session, Model model) throws Exception{
+		String id = (String)session.getAttribute("loginId");
+		MemberDTO inform = dao.select(id);
+		model.addAttribute("inform", inform);
+		return "member/mypage";
+	}
+	
+	@RequestMapping("/update")
+	public String update(MemberDTO dto) {
+		dao.update(dto);
+		return "redirect:/member/mypage";
+	}
+	
+	@RequestMapping("/back")
+	public String toHome() {
+		return "redirect:/";
+	}
+	
+	@RequestMapping("/toDelete")
+	public String toDelete() {
+		return "member/deleteconfirm";
+	}
+	
+	@RequestMapping("/delete")
+	public String delete(HttpSession session, Model model){
+		String id = (String)session.getAttribute("loginId");
+		dao.delete(id);
 		session.invalidate();
 		return "redirect:/";
 	}
