@@ -23,5 +23,14 @@ public class BoardsController {
 		model.addAttribute("list", list);
 		return "boards/list";
 	}
+	
+	@RequestMapping("/detailContent")
+	public String detailContent(int seq, Model model) {
+		System.out.println("speContent");
+		BoardsDTO dto = dao.selectByseq(seq);
+		model.addAttribute("dto",dto);
+
+		return "/boards/datail";
+	}
 
 }

@@ -21,4 +21,9 @@ public class BoardsDAO {
 		String sql = "select * from boards order by seq desc";
 		return jdbc.query(sql, new BeanPropertyRowMapper<BoardsDTO>(BoardsDTO.class));		
 	}
+	
+	public BoardsDTO selectByseq(int seq) {
+		String sql = "select * from board where seq=?";
+		return jdbc.queryForObject(sql, new BeanPropertyRowMapper<BoardsDTO>(BoardsDTO.class),seq);
+	}
 }
