@@ -121,7 +121,7 @@
 		       </div>
 		       <div id="btn">
 		            <input id=login type="submit" value="로그인">
-		            <a href="/member/join"><input id=register type="button" value="회원가입"></a>
+		            <a href="/members/join"><input id=register type="button" value="회원가입"></a>
 		       </div>
 	        </form>
 			</div>
@@ -135,7 +135,7 @@
 				   	    <a href="/boards/list"><input id="toBoardBtn" name="guestBook" type="button" value="게시판"></a>
 				   </td>
 				   	   <td>
-					   	    <a href="/member/myPage"><input id="toMyPage" name="myPage" type="button" value="마이페이지"></a>
+					   	    <a href="/member/mypage"><input id="toMyPage" name="myPage" type="button" value="마이페이지"></a>
 					   </td>
 				   <td>
 					   <div id="logoutBtn"> 

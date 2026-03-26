@@ -70,7 +70,7 @@ public class MemberController {
 	
 	@RequestMapping("/mypage")
 	public String toMypage(HttpSession session, Model model) throws Exception{
-		String id = (String)session.getAttribute("loginId");
+		String id = (String)session.getAttribute("loginID");
 		MemberDTO inform = dao.select(id);
 		model.addAttribute("inform", inform);
 		return "member/mypage";
