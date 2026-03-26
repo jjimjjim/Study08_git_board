@@ -154,8 +154,8 @@ div{
             </c:forEach>
         </div>
         <div class="btn">
-        <a href="/members/back"><button class="btns" id="listBtn">메인</button></a>
-        <a href="/board/writeform"><button class="btns" id="writeBtn">글쓰기</button></a>
+        <button class="btns" id="listBtn">메인</button>
+        <button class="btns" id="writeBtn">글쓰기</button>
         </div>
      
     </div>
