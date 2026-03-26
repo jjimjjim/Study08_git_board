@@ -132,7 +132,7 @@
 			   ${loginID}님 환영합니다.
 			   <tr>
 			   	   <td>
-				   	    <a href="/boards/board"><input id="toBoardBtn" name="guestBook" type="button" value="게시판"></a>
+				   	    <a href="/boards/list"><input id="toBoardBtn" name="guestBook" type="button" value="게시판"></a>
 				   </td>
 				   	   <td>
 					   	    <a href="/member/mypage"><input id="toMyPage" name="myPage" type="button" value="마이페이지"></a>
